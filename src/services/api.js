@@ -6,7 +6,6 @@ export function getSpecies(limit) {
     const response = fetch(baseUrl + segment)
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
             let species = data.results.map((x, index) => {
                 let obj = x;
                 obj.key = index + 1;
@@ -27,7 +26,6 @@ export function getPeople(limit) {
     return fetch(baseUrl + segment)
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
             let people = data.results.map((x, index) => {
                 let obj = x;
                 obj.key = index + 1;

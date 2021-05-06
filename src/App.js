@@ -95,7 +95,7 @@ class App extends Component {
         <div className="row">
           <div className="col-12 text-center px-0">
             <div className="header">
-              <img alt={background} className="w-100" src={background}></img>
+              <img alt="star wars" className="w-100" src={background}></img>
               <div className="main-logo">
                 <img alt={logo} className="w-100" src={logo}></img>
               </div>
