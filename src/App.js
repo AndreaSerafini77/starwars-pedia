@@ -42,6 +42,8 @@ class App extends Component {
       this.setState({ species: response });
       this.setState({ people: null });
       this.setState({ loading: false });
+    }).catch(err => {
+      console.log(err);
     });
   }
 
@@ -51,6 +53,8 @@ class App extends Component {
       this.setState({ people: response });
       this.setState({ species: null });
       this.setState({ loading: false });
+    }).catch(err => {
+      console.log(err);
     });
   }
 
