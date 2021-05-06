@@ -23,17 +23,23 @@ const Detail = (props) => {
     let peopleInfo = {
         icon: '',
         species: '',
-        classification: '',
-        language: '',
-        skinColor: '',
-        lifespan: '',
-        designation: '',
-        key: ''
+        hair: '',
+        eye: '',
+        birth: '',
+        key: '',
+        height: '',
+        mass: ''
     }
 
     if (props.type === 'people') {
         if (props && props.item) {
+            peopleInfo.key = props.item.key;
             peopleInfo.name = props.item.name;
+            peopleInfo.hair = props.item.hair_color;
+            peopleInfo.eye = props.item.eye_color;
+            peopleInfo.birth = props.item.birth_year;
+            peopleInfo.mass = props.item.mass;
+            peopleInfo.height = props.item.height;
             switch (props.item.gender) {
                 case 'male':
                     peopleInfo.icon = maleIcon;
@@ -54,6 +60,8 @@ const Detail = (props) => {
             speciesInfo.classification = props.item.classification;
             speciesInfo.language = props.item.language;
             speciesInfo.skinColor = props.item.skin_colors;
+            speciesInfo.lifespan = props.item.average_lifespan;
+            speciesInfo.designation = props.item.designation;
             switch (props.item.classification) {
                 default:
                 case 'mammal':
@@ -74,30 +82,78 @@ const Detail = (props) => {
 
     return (
         <div className="detail-card">
-            {props.item &&
-                <div className='details'>
-                    <img alt="Icon" className="detail-icon" src={(props.type === 'people') ? peopleInfo.icon : speciesInfo.icon} />
-                    <div className="detail-name">{(props.type === 'people') ? peopleInfo.name : speciesInfo.name}</div>
-                    <div className="detail-classification">
-                        <span>Classification:</span>&nbsp;
-                        {(props.type === 'people') ? peopleInfo.classification : speciesInfo.classification}
-                    </div>
-                    <div>
-                        <span>Language:</span>&nbsp;
-                        {(props.type === 'people') ? peopleInfo.language : speciesInfo.language}
-                    </div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-auto p-0">
-                                <span>Skin color:</span>&nbsp;
+            <div className="detail-footer">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 px-0">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-6 col-sm-6 col-md-6 col-lg-12 col-xl-12 px-0 footer-value">
+                                        {(props.type === 'people') ? peopleInfo.height : speciesInfo.lifespan}
+                                    </div>
+                                    <div className="col-6 col-sm-6 col-md-6 col-lg-12 col-xl-12 px-0 footer-label">
+                                        <span>{(props.type === 'people') ? 'Height' : 'Lifespan'}</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="col-5 p-0">
-                                {(props.type === 'people') ? peopleInfo.skinColor : speciesInfo.skinColor}
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-6 px-0 col-xl-6">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-6 col-sm-6 col-md-6 col-lg-12 col-xl-12 px-0 footer-value">
+                                        {(props.type === 'people') ? peopleInfo.mass : speciesInfo.designation}
+                                    </div>
+                                    <div className="col-6 col-sm-6 col-md-6 col-lg-12 col-xl-12 px-0 footer-label">
+                                        <span>{(props.type === 'people') ? 'Mass' : 'Designation'}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            {props.item &&
+                <div className='detail-body'>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <img alt="Icon" className="detail-icon" src={(props.type === 'people') ? peopleInfo.icon : speciesInfo.icon} />
+                            </div>
+                            <div className="col-12">
+                                <div className="detail-name">{(props.type === 'people') ? peopleInfo.name : speciesInfo.name}</div>
+                            </div>
+                            <div className="col-12">
+                                <div className="detail-classification">
+                                    <span>{(props.type === 'people') ? 'Hair:' : 'Classification:'}</span>&nbsp;
+                        {(props.type === 'people') ? peopleInfo.hair : speciesInfo.classification}
+                                </div>
+                            </div>
+                            <div className="col-12">
+                                <div>
+                                    <span>{(props.type === 'people') ? 'Eye:' : 'Language:'}</span>&nbsp;
+                        {(props.type === 'people') ? peopleInfo.eye : speciesInfo.language}
+                                </div>
+                            </div>
+                            <div className="col-12">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-auto p-0">
+                                            <span>{(props.type === 'people') ? 'Birth year:' : 'Skin color:'}</span>&nbsp;
+                                        </div>
+                                        <div className="col-5 p-0">
+                                            {(props.type === 'people') ? peopleInfo.birth : speciesInfo.skinColor}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+
+
+
+
+                </div>
             }
             {!props.item &&
                 <span>Non c'è</span>

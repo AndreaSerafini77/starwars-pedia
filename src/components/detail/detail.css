@@ -4,6 +4,8 @@
     background-color: white;
     border: 1px solid #D5DADF;
     margin: 6px;
+    position: relative;
+    padding-bottom: 85px;
 }
 .detail-name {
     color: #464646;
@@ -18,9 +20,21 @@
     margin: auto;
     opacity: .8;
   }
-  .details {
-      padding: 50px 30px;
+  .detail-body {
       text-align: left;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0px 15px;
+  }
+  .detail-footer {
+      position: absolute;
+      bottom: 0px;
+      background-color: #F5F5F5;
+      height: 85px;
+      width: 100%;
+      display: flex;
+      align-items: center;
   }
   .detail-icon {
     -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
