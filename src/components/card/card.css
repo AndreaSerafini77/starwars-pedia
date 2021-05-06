@@ -1,0 +1,43 @@
+.card-content {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.card-wrapper {
+    position: relative;
+    background-color: white;
+    margin: 6px;
+    border: 1px solid #D5DADF;
+    width: calc(100% - 12px);
+    min-height: 204px;
+    transition: all .5s ease;
+}
+.card-wrapper.selected {
+    border: 2px solid #707070;
+}
+.card-wrapper:hover {
+    background-color: #D5DADF;
+}
+
+.item-name {
+    font-size: 15px;
+    color: #464646;
+}
+.item-gender {
+    font-size: 15px;
+    color: #7C7C7C;
+}
+
+.gender-icon {
+    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5); /* FF3.5+ */
+     -ms-transform: scale(0.5); /* IE9 */
+      -o-transform: scale(0.5); /* Opera 10.5+ */
+         transform: scale(0.5);
+}

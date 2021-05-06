@@ -1,0 +1,31 @@
+.detail-card {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background-color: white;
+    border: 1px solid #D5DADF;
+    margin: 6px;
+}
+.detail-name {
+    color: #464646;
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: 18px;
+    padding-bottom: 30px;
+}
+.small-lottie-loading {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    opacity: .8;
+  }
+  .details {
+      padding: 50px 30px;
+      text-align: left;
+  }
+  .detail-icon {
+    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.8); /* FF3.5+ */
+     -ms-transform: scale(0.8); /* IE9 */
+      -o-transform: scale(0.8); /* Opera 10.5+ */
+         transform: scale(0.8);
+}
