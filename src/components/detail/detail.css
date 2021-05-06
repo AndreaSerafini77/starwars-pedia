@@ -1,12 +1,35 @@
+.detail-wrapper {
+    height: 100%;
+}
+.detail-card.selected {
+    border: 2px solid var(--selected-grey);
+}
 .detail-card {
     width: calc(100% - 12px);
     height: calc(100% - 12px);
-    background-color: white;
-    border: 1px solid #D5DADF;
+    background-color: var(--white);
+    border: 1px solid var(--border-grey);
     margin: 6px;
+    position: relative;
+    padding-bottom: 85px;
+}
+.no-detail-card {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background-color: var(--white);
+    border: 1px solid var(--border-grey);
+    margin: 6px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.no-detail-label {
+    color: var(--dark-grey);
+    line-height: 25px;
+    opacity: .6;
 }
 .detail-name {
-    color: #464646;
+    color: var(--dark-grey);
     font-size: 20px;
     line-height: 24px;
     padding-top: 18px;
@@ -16,11 +39,35 @@
     width: 100px;
     height: 100px;
     margin: auto;
-    opacity: .8;
+    opacity: .6;
   }
-  .details {
-      padding: 50px 30px;
-      text-align: left;
+.detail-body {
+    text-align: left;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+}
+.padding-30 {
+    padding: 0px 30px;
+}
+  .detail-footer {
+      position: absolute;
+      bottom: 0px;
+      background-color: var(--footer-light-grey);
+      height: 85px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+  }
+  .footer-value {
+    line-height: 25px;
+  }
+  .footer-value.people {
+    color: var(--red);
+  }
+  .footer-value.species {
+    color: var(--blue);
   }
   .detail-icon {
     -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
@@ -28,4 +75,14 @@
      -ms-transform: scale(0.8); /* IE9 */
       -o-transform: scale(0.8); /* Opera 10.5+ */
          transform: scale(0.8);
+}
+.no-detail-icon {
+    -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5); /* FF3.5+ */
+     -ms-transform: scale(0.5); /* IE9 */
+      -o-transform: scale(0.5); /* Opera 10.5+ */
+         transform: scale(0.5);
+}
+.detail-info {
+    color: var(--label-grey);
 }

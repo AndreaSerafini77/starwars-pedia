@@ -8,7 +8,7 @@ const Filters = (props) => {
 
     return (
         <div className="filters">
-            <span className="filter-label">Filtra per</span>
+            <span className="filter-label bold">Filtra per</span>
             {props.filters.map(filter => (
                 <span
                     onClick={() => { setChecked(filter.id); props.onCheck(filter.id) }

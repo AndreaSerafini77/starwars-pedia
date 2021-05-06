@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('find an image with star wars as an Alt Text', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const spanElement = screen.getByAltText('star wars');
+  expect(spanElement).toBeInTheDocument();
 });

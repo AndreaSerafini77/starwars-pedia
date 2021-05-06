@@ -26,6 +26,11 @@ const List = (props) => {
             </Card>
           </div>
         ))}
+        {!props.items && !props.loading &&
+          <div className="lottie-loading">
+            Qualcosa è andato storto! Riprova più tardi
+            </div>
+        }
         {props.loading &&
           <div className="lottie-loading">
             <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_uwVsdi.json"

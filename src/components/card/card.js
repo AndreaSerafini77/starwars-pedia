@@ -55,7 +55,7 @@ const Card = (props) => {
             <div className="card-content">
                 <img alt={props.type === 'people' ? 'gender' : 'classification'} className="gender-icon" src={cardInfo.icon} />
                 <div className="text-center">
-                    <span className="item-name">
+                    <span className="item-name medium">
                         {cardInfo.name}
                     </span>
                 </div>
