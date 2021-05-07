@@ -3,8 +3,14 @@ const baseUrl = 'https://swapi.dev/api/';
 // fetch all the species
 export function getSpecies(limit) {
     const segment = 'species';
-    const response = fetch(baseUrl + segment)
-        .then(res => res.json())
+    return fetch(baseUrl + segment)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Not found", res)
+            } else {
+                return res.json();
+            }
+        })
         .then((data) => {
             let species = data.results.map((x, index) => {
                 let obj = x;
@@ -17,14 +23,19 @@ export function getSpecies(limit) {
         .catch(() => {
             return [];
         });
-    return response;
 }
 
 // fetch all the people
 export function getPeople(limit) {
     const segment = 'people';
     return fetch(baseUrl + segment)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Not found", res)
+            } else {
+                return res.json();
+            }
+        })
         .then((data) => {
             let people = data.results.map((x, index) => {
                 let obj = x;
@@ -36,16 +47,21 @@ export function getPeople(limit) {
         })
         .catch(() => {
             return [];
-        })
+        });
 }
 
 // fetch a specific human by its id
 export function getPeopleById(id) {
     const segment = 'people';
     return fetch(baseUrl + segment + '/' + id)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Not found", res)
+            } else {
+                return res.json();
+            }
+        })
         .then((data) => {
-
             return data;
         })
         .catch(() => {
@@ -57,7 +73,13 @@ export function getPeopleById(id) {
 export function getSpeciesById(id) {
     const segment = 'species';
     return fetch(baseUrl + segment + '/' + id)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Not found", res)
+            } else {
+                return res.json();
+            }
+        })
         .then((data) => {
 
             return data;

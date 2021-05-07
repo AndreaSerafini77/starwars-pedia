@@ -1,3 +1,14 @@
 .list-card {
     cursor: pointer;
 }
+.no-list-card {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 432px;
+}
+.error-message {
+    font-style: italic;
+    letter-spacing: 1px;
+    color: var(--selected-grey);
+}

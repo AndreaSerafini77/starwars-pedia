@@ -13,11 +13,10 @@ const List = (props) => {
   return (
     <div className="container">
       <div className="row">
-        {props.items && props.items.map((item) => (
+        {props.items && props.items.length > 0 && props.items.map((item) => (
           <div key={item.key}
             onClick={() => { props.onSelect(item.key); setSelected(item.key) }}
-            className="col-lg-4 col-md-6 col-xl-4 col-12 col-sm-6 list-card p-0"
-          >
+            className="col-lg-4 col-md-6 col-xl-4 col-12 col-sm-6 list-card p-0">
             <Card
               selected={selected}
               item={item}
@@ -26,10 +25,10 @@ const List = (props) => {
             </Card>
           </div>
         ))}
-        {!props.items && !props.loading &&
-          <div className="lottie-loading">
-            Qualcosa è andato storto! Riprova più tardi
-            </div>
+        {props.items && props.items.length === 0 && !props.loading &&
+          <div className="col-lg-4 col-md-6 col-xl-4 col-12 col-sm-6 no-list-card p-0">
+            <span className="error-message">Qualcosa è andato storto! Riprova più tardi</span>
+          </div>
         }
         {props.loading &&
           <div className="lottie-loading">

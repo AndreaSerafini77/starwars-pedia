@@ -42,7 +42,8 @@ class App extends Component {
       this.setState({ species: response });
       this.setState({ people: null });
       this.setState({ loading: false });
-    }).catch(err => {
+    })
+    .catch(err => {
       console.log(err);
     });
   }
